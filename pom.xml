@@ -8,10 +8,10 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bolsadeideas.springboot.datajpa.app</groupId>
-	<artifactId>spring-boot-data-jpa</artifactId>
+	<groupId>com.springboot.app</groupId>
+	<artifactId>projectAA17</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-data-jpa</name>
+	<name>projectAA17</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
