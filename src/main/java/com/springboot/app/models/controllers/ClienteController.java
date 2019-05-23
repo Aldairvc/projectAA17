@@ -37,9 +37,7 @@ public class ClienteController {
 	public String crear(Map<String, Object> model) {
 
 		Cliente cliente = new Cliente();
-		Categoria categoria = new Categoria();
 		model.put("cliente", cliente);
-		model.put("categoria",categoria);
 		model.put("titulo", "Formulario de Cliente");
 		return "form";
 	}
@@ -50,7 +48,6 @@ public class ClienteController {
 	public String editar(@PathVariable(value="id") Long id, Map<String, Object> model) {
 		
 		Cliente cliente = null;
-		Categoria categoria =  null;
 
 		
 		if(id > 0) {
@@ -59,7 +56,6 @@ public class ClienteController {
 			return "redirect:/listar";
 		}
 		model.put("cliente", cliente);
-		model.put("categoria",categoria);
 		model.put("titulo", "Editar Cliente");
 		return "form";
 	}
