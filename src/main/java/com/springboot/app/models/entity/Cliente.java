@@ -45,19 +45,9 @@ public class Cliente implements Serializable {
 	private Date createAt;
 
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idcategoria")
-	private Categoria categoria;
 	
-	
+
+
 	public Long getId() {
 		return id;
 	}
