@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.springboot.app.models.entity.Categoria;
 import com.springboot.app.models.entity.Cliente;
 import com.springboot.app.models.service.IClienteService;
 
@@ -30,7 +29,7 @@ public class ClienteController {
 	public String listar(Model model) {
 		model.addAttribute("titulo", "Listado de clientes");
 		model.addAttribute("clientes", clienteService.findAll());
-		return "listar";
+		return "listarCliente";
 	}
 	
 	@RequestMapping(value = "/form")
@@ -39,7 +38,7 @@ public class ClienteController {
 		Cliente cliente = new Cliente();
 		model.put("cliente", cliente);
 		model.put("titulo", "Formulario de Cliente");
-		return "form";
+		return "formCliente";
 	}
 	
 
@@ -53,23 +52,23 @@ public class ClienteController {
 		if(id > 0) {
 			cliente = clienteService.findOne(id);
 		} else {
-			return "redirect:/listar";
+			return "redirect:/listarCliente";
 		}
 		model.put("cliente", cliente);
 		model.put("titulo", "Editar Cliente");
-		return "form";
+		return "formCliente";
 	}
 	
 	@RequestMapping(value = "/form", method = RequestMethod.POST)
 	public String guardar(@Valid Cliente cliente, BindingResult result, Model model, SessionStatus status) {
 		if(result.hasErrors()) {
 			model.addAttribute("titulo", "Formulario de Cliente");
-			return "form";
+			return "formCliente";
 		}
 		
 		clienteService.save(cliente);
 		status.setComplete();
-		return "redirect:listar";
+		return "redirect:listarCliente";
 	}
 	
 	@RequestMapping(value="/eliminar/{id}")
@@ -78,6 +77,6 @@ public class ClienteController {
 		if(id > 0) {
 			clienteService.delete(id);
 		}
-		return "redirect:/listar";
+		return "redirect:/listarCliente";
 	}
 }

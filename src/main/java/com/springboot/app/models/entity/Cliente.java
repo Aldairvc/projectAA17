@@ -31,6 +31,17 @@ public class Cliente implements Serializable {
 	@NotEmpty
 	private String apellido;
 	
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	@NotEmpty
+	private String dni;
+	
 	@NotEmpty
 	@Email
 	private String email;
@@ -40,10 +51,6 @@ public class Cliente implements Serializable {
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createAt;
-
-
-	
-
 
 	public Long getId() {
 		return id;

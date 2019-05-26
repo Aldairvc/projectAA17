@@ -42,7 +42,7 @@ public class CategoriaController {
 		
 		model.put("categoria", categoria);
 		model.put("titulo", "Formulario Categoria");
-		return "editarCategoria";
+		return "formCategoria";
 		
 	}
 
@@ -57,14 +57,14 @@ public class CategoriaController {
 		}
 		model.put("categoria", categoria);
 		model.put("titulo", "Editar Categoria");
-		return "editarCategoria";
+		return "formCategoria";
 	}
 
 	@RequestMapping(value = "/editarCategoria", method = RequestMethod.POST)
 	public String guardar(@Valid Categoria categoria, BindingResult result, Model model, SessionStatus status) {
 		if(result.hasErrors()) {
 			model.addAttribute("titulo", "Formulario de Categoria");
-			return "editarCategoria";
+			return "formCategoria";
 		}
 		
 		categoriaService.save(categoria);

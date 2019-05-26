@@ -2,7 +2,6 @@ package com.springboot.app.models.service;
 
 import java.util.List;
 
-import com.springboot.app.models.entity.Categoria;
 import com.springboot.app.models.entity.Cliente;
 
 public interface IClienteService {
