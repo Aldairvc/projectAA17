@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: projectAA17
+Implementation-Version: 0.0.1-SNAPSHO
+Built-By: ANTHONY
+Implementation-Vendor-Id: com.springboot.app
+Build-Jdk: 1.8.0_162
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/projectAA17
+Created-By: Maven Integration for Eclipse
+
