@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
+  	<link rel="stylesheet" th:href="@{/css/main.css}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -239,6 +240,10 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
+                    <h4 class="card-title">
+              </h4>
+              
+              
                   <table class="table table-striped">
               			<thead>
               				<tr>
@@ -248,25 +253,26 @@
               					<th>dni</th>
               					<th>email</th>
               					<th>fecha</th>
+              					<th>Crear Factura</th>
                     			<th>editar</th>
                     			<th>eliminar</th>
               				</tr>
               			</thead>
               			<tbody>
               				<tr th:each="cliente: ${clientes}">
-              					<td th:text="${cliente.id}"></td>
+              					<td class="btn btn-outline-success btn-sm" th:href="@{'/factura/form/' + ${cliente.id}}"  th:text="${cliente.id}"></td>
               					<td th:text="${cliente.nombre}"></td>
               					<td th:text="${cliente.apellido}"></td>
               					<td th:text="${cliente.dni}"></td>
               					<td th:text="${cliente.email}"></td>
               					<td th:text="${cliente.createAt}"></td>
+              					<th><a class="btn btn-success btn-xs" th:href="@{'/factura/form/' + ${cliente.id}}" th:text="'crear factura'"/></th>
               					<td><a class="btn btn-primary btn-xs" th:href="@{form/} + ${cliente.id}" th:text="'editar'"></a></td>
               					<td><a class="btn btn-danger btn-xs" th:href="@{/eliminar/} + ${cliente.id}" th:text="'eliminar'" onclick="return confirm('Estás seguro que quieres eliminar?');"></a></td>
               				</tr>
               			</tbody>
-              
-              		</table>
-
+         
+                    </table>
                   </div>
                 </div>
               </div>
@@ -311,6 +317,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
+    <script th:src="@{/js/jquery-ui.min.js}"></script>
 
   </body>
 </html>

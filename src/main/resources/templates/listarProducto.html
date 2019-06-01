@@ -257,7 +257,7 @@
                       					<td th:text="${producto.nombre}"></td>
                       					<td th:text="${producto.precio}"></td>
                       					<td th:text="${producto.stock}"></td>
-                      					<td th:text="${producto.categoria}"></td>
+                      					<td th:text="${producto.categoria.nombre}"></td>
                       					<td><a class="btn btn-primary btn-xs" th:href="@{editarProducto/} + ${producto.idproducto}" th:text="'editar'"></a></td>
                       					<td><a class="btn btn-danger btn-xs" th:href="@{/eliminarProducto/} + ${producto.idproducto}" th:text="'eliminar'" onclick="return confirm('Estás seguro que quieres eliminar?');"></a></td>
                       				</tr>
